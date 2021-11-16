@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .color{
+            background-color:green;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li th:each="dto, state:${list}">
+        <!-- if와 unless의 조건을 동일하게 작성해야함(if: -인 경우, unless: -가 아닌경우) -->
+        <span th:if="${dto.sno % 5 == 0}"
+              th:class="${dto.sno % 5 == 0} ? 'color'"
+              th:text="${'5의 배수' + dto.sno}"></span>
+        <span th:unless="${dto.sno % 5 == 0}" th:text="${dto}"></span>
+    </li>
+</ul>
+
+</body>
+</html>

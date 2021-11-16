@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .css{
+            font-size: 20px;
+            font-weight: 700;
+            font-style: italic;
+            color: thistle;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li th:each="user, state:${userList}">
+            <span th:if="${user.id == 17}"
+                  th:class="${user.id == 17} ? 'css'"
+                  th:text="${'17번 입니다.'}"></span>
+            <span th:unless="${user.id == 17}" th:text="${user}"></span>
+        </li>
+    </ul>
+</body>
+</html>
