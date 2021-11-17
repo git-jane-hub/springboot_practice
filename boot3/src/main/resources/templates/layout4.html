@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{/fragment4 :: target(~{this :: #ulFirst}, ~{this :: #ulSecond} )}">
+<!-- this :: #ulFirst 해당 문서의 아이디 ulFirst를 전달 -->
+    <ul id="ulFirst">
+        <li>AAA</li>
+        <li>BBB</li>
+        <li>CCC</li>
+    </ul>
+
+    <ul id="ulSecond">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+
+</th:block>

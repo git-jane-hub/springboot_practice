@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>fragment 요소 가져오기</h1>
+
+    <h2>part1 가져오기</h2>
+    <!-- replace는 해당 태그를 part1으로 교체: div > h1 -->
+    <div th:replace="~{/fragment1 :: part1}"></div><!-- fragment1.html의 part1 fragment(조각) -->
+
+    <h2>part2 가져오기</h2>
+    <!-- insert는 해당 태그 내부에 part2를 삽입: div > div > h1 -->
+    <div th:insert="~{/fragment1 :: part2}"></div>
+
+    <h2>part3 가져오기</h2>
+    <div th:insert="~{/fragment1 :: part3}"></div>
+</body>
+</html>
