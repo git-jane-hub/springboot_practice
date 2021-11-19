@@ -7,6 +7,7 @@
 <body>
     <h1 th:text="${result}"></h1>
     <h1 th:text="${dto}"></h1>
+    <!-- th:inline 속성은 text, javascript, none을 가짐 -->
     <script th:inline="javascript">
         const msg = [[${result}]]
         const dto = [[${dto}]]
